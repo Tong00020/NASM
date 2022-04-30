@@ -1,15 +1,14 @@
 bits 64
-extern number
-extern number2
-
-section .text
-global subs
-global soma
-
-soma:
-  call number
-  mov ebp, eax
-  call number2
-  add ebp, eax
-  mov eax,ebp
-  ret
+global  sum
+        section .text
+sum:
+        xorpd   xmm0, xmm0              ; inicializa com 0
+        cmp     rsi, 0                  ; special case for length = 0
+        je      done
+next:
+        addsd   xmm0, [rdi]             ; add in the current array element
+        add     rdi, 8                  ; move to next array element
+        dec     rsi                     ; count down
+        jnz     next                    ; if not done counting, continue
+done:
+        ret                             ; return value already in xmm0
