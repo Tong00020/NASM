@@ -6,7 +6,6 @@ double sum(double[], uint64_t);
 int main() {
     int s1,s2,flag,flag2,cont=0;
 
-
     while(cont==0){
       printf("\nDeseja somar ou subtrai?\n 1-Soma \n 2-Subtrai\n");
       scanf("%d",&flag);
