@@ -6,7 +6,7 @@ sum:
        
 next:
         addsd   xmm0, [rdi]             ; adiciona
-        add     rdi, 8                  ; move to next array element
+        add     rdi, 8                  ; ir ao próximo elemento
         dec     rsi                     ; contagem
         jnz     next                    ; testa de continua
         ret                             ; retorna valor
